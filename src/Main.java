@@ -11,12 +11,14 @@ public class Main {
 
         System.out.println("1. Create matrix A");
         System.out.println("2. Create matrix B");
-        System.out.println("3. A+B");
-        System.out.println("4. A*B");
-        System.out.println("5. A/B");
+        System.out.println("3. A = A+B");
+        System.out.println("4. A = A*B");
+        System.out.println("5. A = A/B");
         System.out.println("6. Transpose A");
         System.out.println("7. Determinant A");
+        System.out.println("8. Show matrix A");
         System.out.println("0. Exit");
+        
         int choice = scanner.nextInt();
 
             try {
@@ -79,10 +81,10 @@ public class Main {
                             break;
                         }
 
-                        ComplexMatrix result3 = matrixA.add(matrixB);
+                        matrixA = matrixA.add(matrixB);
 
-                        System.out.println("Result:");
-                        System.out.println(result3);
+                        System.out.println("Matrix A:");
+                        System.out.println(matrixA);
 
                         break;
                     
@@ -94,10 +96,10 @@ public class Main {
                             break;
                         }
 
-                        ComplexMatrix result4 = matrixA.multiply(matrixB);
+                        matrixA = matrixA.multiply(matrixB);
 
-                        System.out.println("Result:");
-                        System.out.println(result4);
+                        System.out.println("Matrix A:");
+                        System.out.println(matrixA);
 
                         break;
 
@@ -109,10 +111,10 @@ public class Main {
                             break;
                         }
 
-                        ComplexMatrix result5 = matrixA.divide(matrixB);
+                        matrixA = matrixA.divide(matrixB);
 
-                        System.out.println("Result:");
-                        System.out.println(result5);
+                        System.out.println("Matrix A:");
+                        System.out.println(matrixA);
 
                         break;
 
@@ -124,10 +126,10 @@ public class Main {
                             break;
                         }
 
-                        ComplexMatrix result6 = matrixA.transpose();
+                        matrixA = matrixA.transpose();
 
-                        System.out.println("Result:");
-                        System.out.println(result6);
+                        System.out.println("Matrix A:");
+                        System.out.println(matrixA);
 
                         break;
                     
@@ -143,6 +145,16 @@ public class Main {
 
                         System.out.println("Determinant: " + result7);
 
+                        break;
+                        
+                    case 8:
+                        if (matrixA == null) {
+                            System.out.println("create matrix A first");
+                            break;
+                        }
+
+                        System.out.println("Current matrix A:");
+                        System.out.println(matrixA);
                         break;
 
                     case 0:
